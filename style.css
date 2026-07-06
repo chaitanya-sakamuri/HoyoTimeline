@@ -1,9 +1,19 @@
-body{
-    margin:0;
-    background:#101522;
-    color:white;
-    font-family:Arial, Helvetica, sans-serif;
-    text-align:center;
+body {
+    margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    background-image: 
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.45)
+        ),
+        url("./assets/background.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 h1{
@@ -14,6 +24,13 @@ h1{
 h2{
     margin-bottom:30px;
     color:#cfcfcf;
+}
+
+.character-icon {
+    height: 150px;
+    border-radius: 75%;
+    object-fit: cover;
+    margin-bottom: 12px;
 }
 
 #birthday-container{
@@ -36,6 +53,25 @@ h2{
     box-shadow:0 0 15px rgba(255,255,255,.15);
 
     transition:.3s;
+
+    backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+}
+
+.card h3 {
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 16px;
+    margin: 12px 0;
+}
+
+.card p:last-child {
+    font-size: 17px;
+    font-weight: 500;
 }
 
 .card:hover{
@@ -44,4 +80,84 @@ h2{
 
     box-shadow:0 0 25px rgba(255,255,255,.35);
 
+}
+
+.pyro {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+.hydro {
+    background: rgba(0, 17, 255, 0.8);
+}
+
+.anemo {
+    background: rgba(0, 255, 136, 0.8);
+}
+
+.electro {
+        background: rgba(119, 19, 185, 0.8);
+}
+
+.cryo {
+    background: rgba(28, 173, 206, 0.8);
+}
+
+.dendro {
+    background: rgba(60, 199, 22, 0.8);
+}
+
+.geo {
+    background: rgba(255, 196, 0, 0.8);
+}
+
+.physical {
+    background: rgba(220, 220, 220, 0.8);
+}
+
+.pyro:hover {
+    background: rgba(255, 0, 0, 0.45);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 120, 80, 0.7);
+}
+
+.hydro:hover {
+    background: rgba(0, 17, 255, 0.45);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 20px rgba(100, 190, 255, 0.7);
+}
+
+.anemo:hover {
+    background: rgba(21, 173, 102, 0.45);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 20px rgba(140, 255, 190, 0.7);
+}
+
+.electro:hover {
+    background: rgba(119, 19, 185, 0.45);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 20px rgba(200, 120, 255, 0.7);
+}
+
+.cryo:hover {
+    background: rgba(28, 173, 206, 0.45);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 20px rgba(170, 240, 255, 0.7);
+}
+
+.dendro:hover {
+    background: rgba(60, 199, 22, 0.45);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 20px rgba(150, 255, 120, 0.7);
+}
+
+.geo:hover {
+    background: rgba(255, 196, 0, 0.45);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 220, 100, 0.7);
+}
+
+.physical:hover {
+    background: rgba(220, 220, 220, 0.65);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 20px rgba(220, 220, 220, 0.7);
 }
