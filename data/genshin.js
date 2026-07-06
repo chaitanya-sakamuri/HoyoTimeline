@@ -17,7 +17,7 @@ const genshinCharacters = [
     "name": "Lohen",
     "birthday": "04-03",
     "icon": "Lohen",
-    "element": "Pyro"
+    "element": "Cryo"
   },
   {
     "name": "Lisa",
