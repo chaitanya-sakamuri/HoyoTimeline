@@ -3,8 +3,8 @@ import os
 
 API = "https://genshin-impact.fandom.com/api.php"
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-SAVE_DIR = os.path.join(BASE_DIR, "fandom_icons")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SAVE_DIR = os.path.join(BASE_DIR, "assets", "genshin_images")
 
 os.makedirs(SAVE_DIR, exist_ok=True)
 def get_characters():
@@ -18,7 +18,7 @@ def get_characters():
     return r.json()["query"]["categorymembers"]
 
 def get_icon_url(name):
-    # IMPORTANT: icon naming pattern on fandom
+    # Character image naming pattern used by the Genshin Fandom API
     filename = f"{name}_Icon.png"
 
     r = requests.get(API, params={
@@ -52,8 +52,10 @@ def main():
         url = get_icon_url(name)
 
         if url:
-            print("Downloading:", name)
-            download(url, name + ".png")
+             extension = os.path.splitext(url)[1]
+             print("Downloading:", name)
+             download(url, name + extension)
+             print(name, extension)
         else:
             print("Missing:", name)
 

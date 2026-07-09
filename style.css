@@ -161,3 +161,55 @@ h2{
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 0 20px rgba(220, 220, 220, 0.7);
 }
+
+.birthday-card {
+    border: 3px solid gold;
+    box-shadow:
+        0 0 15px gold,
+        0 0 35px rgba(255,215,0,0.8),
+        0 0 60px rgba(255,215,0,0.5);
+
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow:
+            0 0 10px gold,
+            0 0 25px rgba(255,215,0,.6);
+    }
+
+    to {
+        box-shadow:
+            0 0 25px gold,
+            0 0 50px rgba(255,215,0,1);
+    }
+}
+
+#birthday-message{
+    color: gold;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 10px gold,
+        0 0 20px rgba(255,215,0,.8);
+
+    animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText{
+    from{
+        text-shadow:
+            0 0 8px gold,
+            0 0 20px rgba(255,215,0,.6);
+    }
+
+    to{
+        text-shadow:
+            0 0 15px gold,
+            0 0 35px rgba(255,215,0,1);
+    }
+}
