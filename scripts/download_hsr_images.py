@@ -1,10 +1,10 @@
 import requests
 import os
 
-API = "https://genshin-impact.fandom.com/api.php"
+API = "https://houkai-star-rail.fandom.com/api.php"
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SAVE_DIR = os.path.join(BASE_DIR, "assets", "genshin_images")
+SAVE_DIR = os.path.join(BASE_DIR, "assets", "hsr_images")
 
 os.makedirs(SAVE_DIR, exist_ok=True)
 def get_characters():
@@ -19,7 +19,7 @@ def get_characters():
 
 def get_icon_url(name):
     # Character image naming pattern used by the Genshin Fandom API
-    filename = f"{name}_Icon.png"
+    filename = f"Character_{name}_Icon.png"
 
     r = requests.get(API, params={
         "action": "query",
@@ -34,7 +34,8 @@ def get_icon_url(name):
 
     try:
         return page["imageinfo"][0]["url"]
-    except:
+    except Exception as e:
+        print(f"Couldn't find icon for {name}")
         return None
 
 def download(url, name):
@@ -45,6 +46,7 @@ def download(url, name):
 
 def main():
     chars = get_characters()
+    print("Characters found:", len(chars))
 
     for c in chars:
         name = c["title"]
@@ -52,11 +54,10 @@ def main():
         url = get_icon_url(name)
 
         if url:
-             
-             print("Downloading:", name)
-             download(url, name + ".webp")
-             print(name + ".webp")
-        else:
+            print("Downloading:", name)
+            download(url, name + ".webp")
+            print(name + ".webp")
+        else:   
             print("Missing:", name)
 
 if __name__ == "__main__":
