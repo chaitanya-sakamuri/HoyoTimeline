@@ -147,6 +147,80 @@ h2{
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 0 20px rgba(255, 220, 100, 0.7);
 }
+/* ---------- ZZZ ---------- */
+.fire {
+    background: rgba(255,70,50,.8);
+}
+
+.ice {
+    background: rgba(70,210,255,.8);
+}
+
+.electric {
+    background: rgba(150,90,255,.8);
+}
+
+.physical {
+    background: rgba(160,160,160,.8);
+}
+
+.ether {
+    background: rgba(255,70,255,.8);
+}
+
+.wind {
+    background: rgba(110,220,180,.8);
+}
+
+.auric-ink {
+    background: rgba(255,180,50,.8);
+}
+
+.honed-edge {
+    background: rgba(255,230,120,.8);
+}
+
+.frost {
+    background: rgba(130,235,255,.8);
+}
+.fire:hover{
+    background: rgba(255,0,0,.45);
+    box-shadow: 0 0 20px rgba(255,120,80,.7);
+}
+.wind:hover{
+    background: rgba(21,173,102,.45);
+    box-shadow: 0 0 20px rgba(140,255,190,.7);
+}
+.electric:hover{
+    background: rgba(119,19,185,.45);
+    box-shadow: 0 0 20px rgba(200,120,255,.7);
+}
+.ice:hover,
+.frost:hover{
+    background: rgba(28,173,206,.45);
+    box-shadow: 0 0 20px rgba(170,240,255,.7);
+}
+
+.physical:hover{
+    background: rgba(150,150,150,.45);
+    box-shadow: 0 0 20px rgba(220,220,220,.7);
+}
+
+.ether:hover{
+    background: rgba(255,70,255,.45);
+    box-shadow: 0 0 20px rgba(255,160,255,.7);
+}
+
+.auric-ink:hover{
+    background: rgba(255,180,50,.45);
+    box-shadow: 0 0 20px rgba(255,215,90,.7);
+}
+
+.honed-edge:hover{
+    background: rgba(255,230,120,.45);
+    box-shadow: 0 0 20px rgba(255,245,170,.7);
+}
+
 
 
 .birthday-card {
