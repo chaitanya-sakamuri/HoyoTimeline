@@ -35,24 +35,44 @@ h2{
     gap:20px;
 }
 
-.card{
-
+.card {
     width:250px;
-
-    background:#1d2435;
+    height:350px;
 
     padding:20px;
 
     border-radius:15px;
 
-    box-shadow:0 0 15px rgba(255,255,255,.15);
+    position:relative;
 
-    transition:.3s;
+    overflow:hidden;
 
-    backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
+    transform-origin:center;
+
+    transition:
+    transform .35s cubic-bezier(.2,1.2,.3,1),
+    box-shadow .35s ease;
 }
 
+.splash {
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:var(--splash);
+
+    background-size:cover;
+
+    background-position:center;
+
+    opacity:0;
+
+    transition:0.4s;
+
+    z-index:0;
+
+}
 .card h3 {
     font-size: 22px;
     margin: 10px 0;
@@ -68,17 +88,109 @@ h2{
     font-size: 17px;
     font-weight: 500;
 }
+.card:hover .character-icon {
+    opacity: 0;
+    transform: scale(0.8);
+}
 
-.card:hover{
+.card-info {
 
-    transform:translateY(-8px);
+    position:relative;
 
-    box-shadow:0 0 25px rgba(255,255,255,.35);
+    z-index:2;
 
+}
+.card:hover {
+
+    z-index:50;
+
+    transform:
+    translateY(-15px)
+    scale(1.35);
+
+    transition:
+    transform .35s cubic-bezier(.2,1.2,.3,1);
+
+}
+
+
+.card:hover .splash {
+
+    opacity:0.9;
+
+}
+.splash::after {
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+#birthday-container {
+
+    display:grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap:20px;
+
+    padding:30px 60px;
+
+}
+
+}
+.genshin-splash {
+    background-size:cover;
+    background-position:center;
+}
+
+
+.zzz-splash {
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+.game-tab {
+    padding: 10px 22px;
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.game-tab:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255,255,255,0.3);
+}
+.game-tab[data-game="genshin"].active {
+    box-shadow:
+    0 0 20px rgba(255,215,120,0.9);
+}
+
+
+.game-tab[data-game="zzz"].active {
+    box-shadow:
+    0 0 20px rgba(100,200,255,0.9);
 }
 /* ---------- Genshin ---------- */
 .pyro {
-    background: rgba(255, 0, 0, 0.8);
+    background: rgba(255,70,50,.8);
 }
 
 .hydro {
@@ -108,43 +220,36 @@ h2{
 
 .pyro:hover {
     background: rgba(255, 0, 0, 0.45);
-    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 0 20px rgba(255, 120, 80, 0.7);
 }
 
 .hydro:hover {
     background: rgba(0, 17, 255, 0.45);
-    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 0 20px rgba(100, 190, 255, 0.7);
 }
 
 .anemo:hover {
     background: rgba(21, 173, 102, 0.45);
-    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 0 20px rgba(140, 255, 190, 0.7);
 }
 
 .electro:hover {
     background: rgba(119, 19, 185, 0.45);
-    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 0 20px rgba(200, 120, 255, 0.7);
 }
 
 .cryo:hover {
     background: rgba(28, 173, 206, 0.45);
-    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 0 20px rgba(170, 240, 255, 0.7);
 }
 
 .dendro:hover {
     background: rgba(60, 199, 22, 0.45);
-    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 0 20px rgba(150, 255, 120, 0.7);
 }
 
 .geo:hover {
     background: rgba(255, 196, 0, 0.45);
-    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 0 20px rgba(255, 220, 100, 0.7);
 }
 /* ---------- ZZZ ---------- */

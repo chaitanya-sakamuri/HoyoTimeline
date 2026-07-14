@@ -67,6 +67,10 @@ function getBirthdayValue(date) {
 
     return value;
 }
+const splashFolder = {
+    "Genshin Impact": "genshin_splash",
+    "Zenless Zone Zero": "zzz_splash"
+};
 
 function renderCharacters(characters) {
 
@@ -97,20 +101,29 @@ function renderCharacters(characters) {
         const isBirthday =
             birthdayToday.some(c=>c.name===character.name);
 
-        container.innerHTML += `
-        <div class="card ${character.element ?
-            character.element.toLowerCase() : ""}
-            ${isBirthday ? "birthday-card" : ""}">
+        container.innerHTML +=
+`
+            <div class="card ${character.element.toLowerCase().replaceAll(" ","-")}
+            ${isBirthday ? "birthday-card" : ""}"
+            style="--splash:url('assets/${splashFolder[character.game]}/${character.name.replaceAll(" ","_")}.webp')">
+
+            <div class="splash ${character.game === "Zenless Zone Zero" ? "zzz-splash" : "genshin-splash"}"></div>
 
             <img src="${character.icon}"
-                 class="character-icon">
+            class="character-icon">
+
+            <div class="card-info">
 
             <h3>${character.name}</h3>
+
             <p>${character.game}</p>
+
             <p>🎂 ${formatBirthday(character.birthday)}</p>
 
-        </div>
-        `;
+            </div>
+
+            </div>
+            `;
     });
 
     const birthdayMessage =
