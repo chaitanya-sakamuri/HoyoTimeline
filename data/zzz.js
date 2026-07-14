@@ -234,12 +234,7 @@ const zzzCharacters = [
     icon: "Seth Lowell.webp",
     element: "Electric"
 },
-{
-    name: "Soldier 0 - Anby",
-    birthday: "02-20",
-    icon: "Soldier 0 - Anby.webp",
-    element: "Electric"
-},
+
 {
     name: "Soldier 11",
     birthday: "03-21",
